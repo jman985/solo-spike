@@ -2,65 +2,88 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { connect } from 'react-redux';
+import { MDBCard, MDBCardTitle, MDBBtn, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
+import Box from '@material-ui/core/Box';
+import { borders } from '@material-ui/system';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
-class App extends Component {
+const defaultProps = {
+  bgcolor: 'background.paper',
+  borderColor: 'text.primary',
+  m: 1,
+  border: 1,
+  style: { width: '5rem', height: '5rem' },
+};
 
-  state = {
-    name: ''
-  }
 
-  handleChange = ( event ) => {
-    this.setState({
-      name: event.target.value
-    })
-  }
+const CardExample = () => {
+  return (
+    <MDBRow container spacing = {50}>
+      <MDBCol md='3'>
+        
+        <MDBCard
+        className='card-image'
 
-  addName = () => {
-    // send the new name to the reducer
-    this.props.dispatch( { type: 'ADD_NAME', payload: this.state.name } )
-    this.setState({
-      name: ''
-    })
-  }
-
-  handleClickOne = () => {
-    // we get dispatch from connect() - we use it to dispatch an action
-    // an action is just an object, that has a `type` property
-    this.props.dispatch( { type: 'CLICK_ONE' } );
-  }
-
-  handleClickTwo = () => {
-    // we get dispatch from connect() - we use it to dispatch an action
-    // an action is just an object, that has a `type` property
-    this.props.dispatch( { type: 'CLICK_TWO' } );
-  }
-
-  render() {
-    return (
-      <div>
-        <header><h1>Redux Intro</h1></header>
-        <main>
-          <button onClick={this.handleClickOne}>Button One!</button>
-          <button onClick={this.handleClickTwo}>Button Two!</button>
-          {/* redux state is on props */}
-          { JSON.stringify( this.props.reduxState)}
-          <div>
-            <h2>Add a Name</h2>
-            <input onChange={this.handleChange} value={this.state.name} />
-            <button onClick={this.addName}>Add Name</button>
+          style={{
+            backgroundImage:
+              "url('https://www.welovesolo.com/wp-content/uploads/vecteezy/50/hw5knhhmd0e.jpg')"
+          }}
+        >
+          <div className='text-black text-center d-flex align-items-center rgba-grey-strong py-5 px-3'>
+            <div>
+              <MDBCardTitle tag='h3' className='pt-4'>
+                <strong>macOS</strong>
+              </MDBCardTitle>
+              <p><strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repellat fugiat, laboriosam, voluptatem, optio vero odio nam sit
+                officia accusamus minus error nisi architecto nulla ipsum
+                dignissimos. Odit sed qui, dolorum!</strong>
+              </p>
+              <MDBBtn color='pink'>
+                <MDBIcon fab icon="apple" />    Add Software
+              </MDBBtn>
+            </div>
           </div>
-        </main>
-      </div>
-    );
-  }
+        </MDBCard>
+      </MDBCol>
+
+      <MDBCol md='3'>
+        <MDBCard
+          className='card-image'
+          style={{
+            backgroundImage:
+              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/610px-Intel-logo.svg.png')"
+          }}
+        >
+          <div className='text-white text-center d-flex align-items-center rgba-blue-strong py-3 px-2'>
+            <div>
+              <MDBCardTitle tag='h3' className='pt-4'>
+                <strong>Intel</strong>
+              </MDBCardTitle>
+              <ul className='text-left'>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>Repellat fugiat, laboriosam, voluptatem, optio vero odio nam sit</li>
+                <li>officia accusamus minus error nisi architecto nulla ipsum</li>
+                <li>dignissimos. Odit sed qui, dolorum!</li>
+              </ul>
+              <MDBBtn className= 'text-center' color='deep-orange'>
+                <MDBIcon icon='plus' /> Add
+              </MDBBtn>
+              <MDBBtn className= 'text-center' color='grey'>
+                <MDBIcon icon='minus' /> Remove
+              </MDBBtn>
+            </div>
+          </div>
+        </MDBCard>
+      </MDBCol>
+    </MDBRow>
+
+
+
+  )
 }
 
-// This function says what to put on Componet props
-const putReduxStateOnProps = (reduxState) => ({
-  reduxState
-});
-
-// connect() will make the connection between the redux store & our Component
-// connect gives us `dispatch`, this.props.dispatch( action )
-// to see redux state, send function to connect
-export default connect(putReduxStateOnProps)(App);
+export default CardExample;
