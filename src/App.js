@@ -77,6 +77,26 @@ class App extends Component {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
       <MDBCol md='3'>
+      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+      <MDBCard
+          className='card-image'
+          style={{
+            backgroundImage:
+              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/500px-Intel-logo.svg.png')"
+          }}
+        >
+          <div className='text-white text-center d-flex align-items-center rgba-blue-strong py-3 px-2'>
+            <div>
+              <MDBCardTitle tag='h3' className='pt-4'>
+              </MDBCardTitle>
+              <h1><strong>Intel</strong></h1>
+              <MDBBtn className= 'text-center' color='deep-orange' onClick= {this.handleClick} >
+                Details
+              </MDBBtn>
+            </div>
+          </div>
+        </MDBCard>
+
         <MDBCard
           className='card-image'
           style={{
@@ -98,16 +118,17 @@ class App extends Component {
               <MDBBtn className= 'text-center' color='deep-orange'>
                 <MDBIcon icon='plus' /> Add
               </MDBBtn>
-              <MDBBtn className= 'text-center' color='grey'>
-                <MDBIcon icon='minus' /> Remove
+              <MDBBtn className= 'text-center' color='grey' onClick= {this.handleClick}>
+                <MDBIcon icon='minus' /> Cancel
               </MDBBtn>
             </div>
           </div>
         </MDBCard>
+        </ReactCardFlip>
+
       </MDBCol>
       <MDBCol md="3">
 
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
         <MDBCard >
           <MDBCardImage
             className='img-fluid'
@@ -115,7 +136,7 @@ class App extends Component {
             src='https://images.anandtech.com/doci/14735/AMD_Radeon_Car_678x452.png'
           />
           <MDBBtn
-            className='ml-auto mr-4 lighten-3 mdb-coalor' onClick= {this.handleClick}          
+            className='ml-auto mr-4 lighten-3 mdb-coalor'         
           >Details&nbsp;&nbsp;
             <MDBIcon icon='plus'/>
           </MDBBtn>
@@ -134,13 +155,11 @@ class App extends Component {
                 Repellat fugiat, laboriosam, voluptatem, optio vero odio nam sit</strong></p>
           </MDBCardBody>
           <MDBBtn
-            className='ml-auto mr-4 lighten-3 mdb-coalor' onClick= {this.handleClick}          
+            className='ml-auto mr-4 lighten-3 mdb-coalor'          
           >Add Hardware&nbsp;&nbsp;
             <MDBIcon icon='plus'/>
             </MDBBtn>
           </MDBCard>
-        </ReactCardFlip>
-
       </MDBCol>
     </MDBRow>
     </Router>
