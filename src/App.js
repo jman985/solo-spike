@@ -77,24 +77,33 @@ class App extends Component {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
       <MDBCol md='3'>
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
       <MDBCard
           className='card-image'
           style={{
             backgroundImage:
-              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/460px-Intel-logo.svg.png')"
+              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/515px-Intel-logo.svg.png')"
           }}
         >
-          <div className='text-white text-center d-flex align-items-center rgba-blue-strong py-3 px-2'>
+          <div className='text-black text-center d-flex align-items-center py-3 px-2'>
             <div>
-              <MDBCardTitle tag='h3' className='pt-4'>
+              <MDBCardTitle tag='h1' className='pt-4'>
               </MDBCardTitle>
-              <h1><strong>Intel</strong></h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <MDBBtn className= 'text-center' color='purple' onClick= {this.handleClick} >
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <MDBBtn className= 'text-center' color='grey' onClick= {this.handleClick} >
                 Details
-              </MDBBtn>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </MDBBtn>
               <MDBBtn className= 'text-center' color='deep-orange'>
                 <MDBIcon icon='plus' /> Add
               </MDBBtn>
