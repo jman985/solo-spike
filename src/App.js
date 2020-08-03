@@ -82,16 +82,21 @@ class App extends Component {
           className='card-image'
           style={{
             backgroundImage:
-              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/500px-Intel-logo.svg.png')"
+              "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/460px-Intel-logo.svg.png')"
           }}
         >
           <div className='text-white text-center d-flex align-items-center rgba-blue-strong py-3 px-2'>
             <div>
               <MDBCardTitle tag='h3' className='pt-4'>
               </MDBCardTitle>
-              <h1><strong>Intel</strong></h1>
-              <MDBBtn className= 'text-center' color='deep-orange' onClick= {this.handleClick} >
+              <h1><strong>Intel</strong></h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <MDBBtn className= 'text-center' color='purple' onClick= {this.handleClick} >
                 Details
+              </MDBBtn>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <MDBBtn className= 'text-center' color='deep-orange'>
+                <MDBIcon icon='plus' /> Add
               </MDBBtn>
             </div>
           </div>
@@ -119,7 +124,7 @@ class App extends Component {
                 <MDBIcon icon='plus' /> Add
               </MDBBtn>
               <MDBBtn className= 'text-center' color='grey' onClick= {this.handleClick}>
-                <MDBIcon icon='minus' /> Cancel
+                Cancel
               </MDBBtn>
             </div>
           </div>
@@ -144,22 +149,7 @@ class App extends Component {
           
           </MDBCardBody>
         </MDBCard>
-        <MDBCard >
-          <MDBCardImage
-            className='img-fluid'
-            overlay="white-light"
-            src='https://images.anandtech.com/doci/14735/AMD_Radeon_Car_678x452.png'
-          />
-          <MDBCardBody >
-                <p><strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Repellat fugiat, laboriosam, voluptatem, optio vero odio nam sit</strong></p>
-          </MDBCardBody>
-          <MDBBtn
-            className='ml-auto mr-4 lighten-3 mdb-coalor'          
-          >Add Hardware&nbsp;&nbsp;
-            <MDBIcon icon='plus'/>
-            </MDBBtn>
-          </MDBCard>
+        
       </MDBCol>
     </MDBRow>
     </Router>
